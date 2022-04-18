@@ -11,9 +11,20 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR_STR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))#ここではこのファイルまでの絶対パスを文字形式で取得
+BASE_DIR_STR =os.path.abspath(os.path.join(BASE_DIR, os.pardir))#ここでDjangoまでのPathに変換，中身は上のディレクトリの親ディレクトリを返している
+print(BASE_DIR_STR)#取得できているかの確認よう
+# tepmpatesフォルダへの絶対パスを定義
+TEMPLATE_DIR = os.path.join(BASE_DIR_STR,"cms/templates")
+
+# staticフォルダへの絶対パスを定義
+STATIC_DIR = os.path.join(BASE_DIR_STR,"cms/static")
+#print(TEMPLATE_DIR)#取得できているかの確認よう
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,7 +67,7 @@ ROOT_URLCONF = 'mybook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+STATIC_DIR,
+]
