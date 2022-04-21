@@ -26,7 +26,7 @@ STATIC_DIR = os.path.join(BASE_DIR_STR,"cms/static")
 
 LOGIN_URL = '/login' #ログインしてないけど入った人用のURL飛んだ人が行くページのURL
 LOGIN_REDIRECT_URL = '/'#ログインしたら飛ぶURL，今回はindexに飛ぶので/のみ
-LOGOUT_REDIRECT_URL='/login'#ログアウトしたら飛ぶURL
+LOGOUT_REDIRECT_URL='/'#ログアウトしたら飛ぶURL
 
 
 
