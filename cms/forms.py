@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from cms.models import Book
+from .models import Book
 from django.contrib.auth.forms import AuthenticationForm #Djangoのログオン用のモジュールをインポーと
 
 class BookEditForm(ModelForm):

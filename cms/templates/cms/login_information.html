@@ -1,0 +1,26 @@
+  <!-- ここからログインに関する部分 -->
+  <div class="navbar-custom-menu">
+    <ul class="nav navbar-nav">
+        <!-- ログインしてるか判断させるif文 -->
+        {% if user.is_authenticated %}<!-- ログインしてた場合の処理 -->
+          <li>
+              <!--ユーザー名をとってきて表示させる user.get_usernameでユーザー名はとってこれる-->
+              <a class="nav-link">ユーザ名：{{ user.get_username }}</a>
+          </li>
+          <li>
+            <!-- ログアウトボタンを押したらログアウトの関数を実行するよう設定 -->
+            <a class="nav-link" href="{% url 'cms:logout' %}">
+            <!-- ログアウトボタン本体の作成 -->
+            <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
+          </li>
+        {% else %}<!-- ログインしてない場合の処理(ログインボタンを表示) -->
+          <li>
+            <!-- ログインボタンを押したらログインの関数を実行するよう設定 -->
+            <a class="nav-link" href="{% url 'cms:login' %}">
+            <!-- ログインボタン本体の作成 -->
+            <i class="fa fa-fw fa-sign-in"></i>ログイン</a>
+          </li>
+        {% endif %}
+    </ul>
+  </div>
+  <!-- ここまでログインに関する部分 -->
