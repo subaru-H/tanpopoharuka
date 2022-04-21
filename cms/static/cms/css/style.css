@@ -1,0 +1,27 @@
+html {
+  background-color: rgb(216, 248, 200);
+}
+
+form {
+  background-color: rgb(255, 235, 205);
+  /* フォームをページの中央に配置 */
+  /* margin: 0 auto; */
+  width: 350px;
+  /* フォームの輪郭 */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  /* 大きさと配置を統一 */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}

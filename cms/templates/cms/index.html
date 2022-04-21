@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}<!--ここでcssのあるディレクトリを取得している-->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initital-scale=1.0" />
+    <link href='{% static "cms/css/style.css" %}' rel="stylesheet" />
+    <title>たんぽぽ蔵書管理システム</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="" alt="tampopo" />
+      <h1>たんぽぽ蔵書管理システム</h1>
+    </header>
+
+    <article>
+      <h2>かりる</h2>
+      <form action="" method="post">
+        <!--actionでurl,methodでなにするか指定-->
+        <ul>
+          <li>
+            <label>学籍番号：</label>
+            <input type="text" id="student_number" name="student_number" />
+          </li>
+          <li>
+            <label>おなまえ：</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label>蔵書番号：</label>
+            <input type="text" id="book_number" name="book_number" />
+          </li>
+          <li>
+            <label>本の名前：</label>
+            <input type="text" id="book_name" name="book_name" />
+          </li>
+          <li class="btn">
+            <button type="submit">送信</button>
+          </li>
+        </ul>
+      </form>
+
+      <h2>かえす</h2>
+      <form action="" method="post">
+        <!--actionでurl,methodでなにするか指定-->
+        <ul>
+          <li>
+            <label>学籍番号：</label>
+            <input type="text" id="student_number" name="student_number" />
+          </li>
+          <li>
+            <label>おなまえ：</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label>蔵書番号：</label>
+            <input type="text" id="book_number" name="book_number" />
+          </li>
+          <li>
+            <label>本の名前：</label>
+            <input type="text" id="book_name" name="book_name" />
+          </li>
+          <li class="btn">
+            <button type="submit">送信</button>
+          </li>
+        </ul>
+      </form>
+
+      <h2>とうろく</h2>
+      <form action="" method="post">
+        <!--actionでurl,methodでなにするか指定-->
+        <ul>
+            <label>蔵書番号：</label>
+            <input type="text" id="book_number" name="book_number" />
+          </li>
+          <li>
+            <label>本の名前：</label>
+            <input type="text" id="book_name" name="book_name" />
+          </li>
+          <li class="btn">
+            <button type="submit">送信</button>
+          </li>
+        </ul>
+      </form>
+    </article>
+
+    <footer></footer>
+  </body>
+</html>
