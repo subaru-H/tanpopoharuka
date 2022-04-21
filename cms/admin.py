@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cms.models import Book, Impression
+from cms.models import Book
 
 # Register your models here.
 #admin.site.register(Book)
@@ -8,18 +8,7 @@ from cms.models import Book, Impression
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'publisher', 'page')
+    list_display = ('id', 'book_num', 'name', 'publisher', 'isavailable')
     list_display_links = ('id', 'name')
-    
-    
+
 admin.site.register(Book, BookAdmin)
-
-
-
-class ImpressionAdmin(admin.ModelAdmin):
-    list_display = ('id', 'comment',)
-    list_display_links = ('id', 'comment',)
-    raw_id_fields = ('book',)
-    
-
-admin.site.register(Impression, ImpressionAdmin)
