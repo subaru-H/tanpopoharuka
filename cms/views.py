@@ -49,7 +49,7 @@ def book_rent(request, book_id):
     else:
         form = BookRentForm(instance=book)
 
-    return render(request, 'cms/book_rent.html', dict(form=form, book=book))
+    return render(request, 'cms/book_rent.html', dict(form=form, book_id=book_id, book=book))
 
 
 def book_return(request, book_id):
