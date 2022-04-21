@@ -11,7 +11,8 @@ from .models import Book
 
 
 # Create your views here.
-
+def top(request):
+    return render(request, 'cms/base.html')
 
 def book_list(request):
     #return HttpResponse('書籍の一覧')
