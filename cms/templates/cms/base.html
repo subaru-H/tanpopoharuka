@@ -21,11 +21,12 @@
     
     <!-- My style -->
     <link rel="stylesheet" type="text/css" href="{% static 'cms/css/mystyle.css' %}">
-    
+    {% include 'cms/java_function.html' %}<!-- java関数用のhtmlファイルjava_function.htmlの内容をここで挿入 -->
     {% block head %}{% endblock %}
-  </head>
 
+  </head>
   <body>
+
 	<div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-primary fixed-top">

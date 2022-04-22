@@ -3,7 +3,9 @@
 
 {% block title %}かりる{% endblock title %}
 
+
 {% block content %}
+    {% include 'cms/login_information.html' %}<!-- ログイン用のhtmlファイルlogin_information.htmlの内容をここで表示 -->
     <h4 class="mt-4 mb-5 border-bottom">かりる</h4>
     {% if book_id %}
     <form action="{% url 'cms:book_rent' book_id=book_id %}" method="post">

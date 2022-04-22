@@ -1,0 +1,12 @@
+<!-- java関数定義用のhtml -->
+<!-- ここで定義すればbase.htmlでインポートしてるのでそれ周りでは基本使えるよ -->
+
+    <!--トップページに強制的に飛ばすための関数，とりあえずトップページに飛ぶようにしてるけど引数とって任意のところにするのもあり -->
+    <!-- httpの時しか使えない，両方使えるようにする方法がわからなかった．解決策あればよろしく -->
+    <script>
+      function login_display(){
+        host = location.host
+        topurl = 'http://' + host
+        location.replace(topurl);
+      }
+    </script>
