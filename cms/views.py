@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import(LoginView, LogoutView)
+from django.views import generic
 #from cms.models import Book
 #from cms.forms import BookEditForm, BookRentForm
 from .forms import LoginForm, BookEditForm, BookRentForm
@@ -13,6 +14,9 @@ from .models import Book
 # Create your views here.
 def top(request):
     return render(request, 'cms/base.html')
+
+class IndexView(generic.TemplateView):
+    template_name = "cms/index.html"
 
 def book_list(request):
     #return HttpResponse('書籍の一覧')

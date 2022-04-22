@@ -1,90 +1,39 @@
-<!DOCTYPE html>
-{% load static %}<!--ここでcssのあるディレクトリを取得している-->
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initital-scale=1.0" />
-    <link href='{% static "cms/css/style.css" %}' rel="stylesheet" />
-    <title>たんぽぽ蔵書管理システム</title>
-  </head>
+{% extends "cms/base.html" %}
+{% load bootstrap4 %}
 
-  <body>
-    <header>
-      <img src="" alt="tampopo" />
-      <h1>たんぽぽ蔵書管理システム</h1>
-    </header>
+{% block title %}
+かりる
+{% endblock %}
 
-    <article>
-      <h2>かりる</h2>
-      <form action="" method="post">
-        <!--actionでurl,methodでなにするか指定-->
-        <ul>
-          <li>
-            <label>学籍番号：</label>
-            <input type="text" id="student_number" name="student_number" />
-          </li>
-          <li>
-            <label>おなまえ：</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label>蔵書番号：</label>
-            <input type="text" id="book_number" name="book_number" />
-          </li>
-          <li>
-            <label>本の名前：</label>
-            <input type="text" id="book_name" name="book_name" />
-          </li>
-          <li class="btn">
-            <button type="submit">送信</button>
-          </li>
-        </ul>
-      </form>
+{% block header%}
+<header class="masthead text-center text-white">
+  <div class="masthead content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0">たんぽぽ蔵書</h1>
+      <h2 class="masthead-subheading mb-0">Welcome</h2>
+      <a href="login/" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
 
-      <h2>かえす</h2>
-      <form action="" method="post">
-        <!--actionでurl,methodでなにするか指定-->
-        <ul>
-          <li>
-            <label>学籍番号：</label>
-            <input type="text" id="student_number" name="student_number" />
-          </li>
-          <li>
-            <label>おなまえ：</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label>蔵書番号：</label>
-            <input type="text" id="book_number" name="book_number" />
-          </li>
-          <li>
-            <label>本の名前：</label>
-            <input type="text" id="book_name" name="book_name" />
-          </li>
-          <li class="btn">
-            <button type="submit">送信</button>
-          </li>
-        </ul>
-      </form>
-
-      <h2>とうろく</h2>
-      <form action="" method="post">
-        <!--actionでurl,methodでなにするか指定-->
-        <ul>
-            <label>蔵書番号：</label>
-            <input type="text" id="book_number" name="book_number" />
-          </li>
-          <li>
-            <label>本の名前：</label>
-            <input type="text" id="book_name" name="book_name" />
-          </li>
-          <li class="btn">
-            <button type="submit">送信</button>
-          </li>
-        </ul>
-      </form>
-    </article>
-
-    <footer></footer>
-  </body>
-</html>
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-10 order-lg-2">
+        <div class="p-0">
+          <h2 class="display-6">本の一覧、誰が借りたか</h2>
+          <p>みなさんこんにちは</p>
+        </div>
+      </div>
+      <div class="col-lg-2 order-lg-2">
+        <div class="p-0">
+          <h2 class="display-6">本の一覧、誰が借りたか</h2>
+          <p>みなさんこんにちは</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

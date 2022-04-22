@@ -4,7 +4,8 @@ from . import views
 
 app_name = 'cms'
 urlpatterns = [
-    path('', views.book_list, name='book_list'),
+    path('', views.IndexView.as_view(), name='index_page'),
+    path('book/', views.book_list, name='book_list'),
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.Logout.as_view(), name='logout'),
     # path('book/add/', views.book_edit, name='book_add'),
