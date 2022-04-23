@@ -59,3 +59,5 @@ class Login(LoginView):
 class Logout(LoginRequiredMixin, LogoutView):
     """ログアウトページ"""
     template_name = 'cms/login.html'
+    
+#LoginRequiredMixin, 
