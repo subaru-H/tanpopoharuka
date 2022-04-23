@@ -33,10 +33,11 @@ def book_rent(request, book_id):
         book = get_object_or_404(Book, pk=book_id)
     else:
         book = Book()
-        
     if request.method == 'POST':
+        user = str(request.user)
         form = BookRentForm(request.POST, instance=book)
         if form.is_valid():
+            book.renter = user
             book = form.save(commit=False)
             book.isavailable = False
             book.save()
