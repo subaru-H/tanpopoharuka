@@ -4,6 +4,20 @@
 {% block title %}かりる{% endblock title %}
 
 {% block content %}
+
+
+  {% if user.is_authenticated %}<!-- ログインしてた場合の処理 -->
+
+  {% else %}<!-- ログインしてない場合の処理(ログインボタンを表示)，そもそもログインしてない状態で開いたらログイン画面に飛ばす -->
+    <script>
+      login_display();
+    </script>
+  {% endif %}
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="mt-5"></div>
     <h4 class="mt-4 mb-5 border-bottom">かりる</h4>
     {% if book_id %}
     <form action="{% url 'cms:book_rent' book_id=book_id %}" method="post">
@@ -34,4 +48,6 @@
       </div>
     </form>
     <a href="{% url 'cms:book_list' %}" class="btn btn-secondary btn-sm">戻る</a>
+  </div>
+</div>
 {% endblock content %}

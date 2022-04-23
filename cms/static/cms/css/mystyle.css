@@ -1,0 +1,19 @@
+/*bodyの子要素であるwrapperに適用
+column横
+row縦
+*/
+body, #wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px; 
+    }

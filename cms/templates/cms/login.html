@@ -1,0 +1,49 @@
+{% extends "cms/base.html" %}
+<!DOCTYPE html>
+{% block title %}ログインページ{% endblock title %}
+
+{% load static %}
+{% block content %}
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <b>login</b>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <p class="login-box-msg"><b>ログイン画面</b></p>
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group has-feedback">
+            {{ field }}
+          </div>
+        {% endfor %}
+        <div class="row">
+
+          {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              <p>{{ error }}</p>
+            </div>
+          {% endfor %}
+          <!-- /.col -->
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">ログイン</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.login-box-body -->
+  </div>
+  <!-- /.login-box -->
+
+  <!-- jQuery 3 -->
+  <script src="{% static 'AdminLTE-2.4.12/bower_components/jquery/dist/jquery.min.js' %}"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="{% static 'AdminLTE-2.4.12/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  <!-- iCheck -->
+  <script src="{% static 'AdminLTE-2.4.12/plugins/iCheck/icheck.min.js' %}"></script>
+</body>
+{% endblock content %}
