@@ -19,7 +19,6 @@
   <div class="row">
     <div class="mt-5"></div>
     <h4 class="mt-4 border-bottom">書籍の一覧</h4>
-    {#<a href="{% url 'cms:book_add' %}" class="btn btn-primary btn-sm my-3">追加</a>#}
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -31,6 +30,16 @@
           <th scope="col">操作</th>
         </tr>
       </thead>
+      <form class = "mt-2 ml-2 mb-2" action="" method=""GET>
+      <div class="btn-group btn-group-sm mt-2 mb-2">
+        <div class="col">並び替え：</div>
+        <button type="submit" class="btn btn-primary" name="action" value="book_num">蔵書番号ずん</button>
+        <button type="submit" class="btn btn-primary" name="action" value="book_name">書籍名どぅん</button>
+        <button type="submit" class="btn btn-primary" name="action" value="available">貸出可否ぼゅん</button>
+        <div class="col"></div>
+      </div>
+      </form>
+      
       <tbody>
         {% for book in books %}
         <tr>

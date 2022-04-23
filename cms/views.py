@@ -22,6 +22,15 @@ class IndexView(generic.TemplateView):
 def book_list(request):
     #return HttpResponse('書籍の一覧')
     books = Book.objects.all().order_by('book_num')
+    if "action" in request.GET:
+        action = request.GET.get("action")
+        if action == "book_num":
+            books = books.order_by("book_num")
+        elif action == "book_name":
+            books = books.order_by("name")
+        elif action == "available":
+            books = books.order_by("isavailable")
+
     return render(request,'cms/book_list.html',{'books': books})
 
 
@@ -30,7 +39,7 @@ def book_rent(request, book_id):
         book = get_object_or_404(Book, pk=book_id)
     else:
         book = Book()
-        
+
     if request.method == 'POST':
         form = BookRentForm(request.POST, instance=book)
         if form.is_valid():
