@@ -3,8 +3,17 @@
 
 {% block title %}かりる{% endblock title %}
 
-
 {% block content %}
+
+  {% if user.is_authenticated %}<!-- ログインしてた場合の処理 -->
+
+  {% else %}<!-- ログインしてない場合の処理(ログインボタンを表示)，そもそもログインしてない状態で開いたらログイン画面に飛ばす -->
+    <script>
+      login_display();
+    </script>
+  {% endif %}
+
+
 <div class="container-fluid">
   <div class="row">
     <div class="mt-5"></div>
