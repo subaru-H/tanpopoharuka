@@ -18,9 +18,6 @@ def top(request):
 
 class IndexView(generic.TemplateView):
     template_name = "cms/index.html"
-    
-class IndexView2(generic.TemplateView):
-    template_name = "cms/index2.html"
 
 def book_list(request):
     #return HttpResponse('書籍の一覧')
