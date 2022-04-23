@@ -31,13 +31,11 @@
             {% endif %}
           <td>{{ book.renter }}</td>
           <td>
-            {#<a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>#}
             {%if book.isavailable%}
               <a href="{% url 'cms:book_rent' book_id=book.id %}" class="btn btn-outline-primary btn-sm">かりる</a>
             {% else %}
               <a href="{% url 'cms:book_return' book_id=book.id %}" class="btn btn-outline-primary btn-sm">かえす</a>
             {% endif %}
-            {#<a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>#}
           </td>
         </tr>
         {% endfor %}
