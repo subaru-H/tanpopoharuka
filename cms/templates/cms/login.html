@@ -11,7 +11,7 @@
     <form action="" method="POST">
       {% csrf_token %}
       {% for field in form %}
-        <div class="form-group has-feedback">
+        <div class="form-group has-feedback form_long">
           {{ field }}
         </div>
       {% endfor %}
@@ -27,7 +27,7 @@
         </div>
       </div>
     </form>
-    <a href="{% url 'cms:index_page' %}" class="btn btn-secondary btn-sm">戻る</a>
+    <a href="{% url 'cms:index_page' %}" class="btn btn-secondary btn-sm btn_sec ">戻る</a>
   </div>
 </div>
 {% endblock content %}

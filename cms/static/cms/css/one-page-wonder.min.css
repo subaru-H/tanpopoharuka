@@ -78,3 +78,11 @@ header.masthead .bg-circle-4{
 .btn-secondary:focus{
     -webkit-box-shadow:0 0 0 .2rem rgba(255,106,0,.5);box-shadow:0 0 0 .2rem rgba(255,106,0,.5)
 }
+.btn_sec{
+    width: 100px;
+    padding: 8px;
+}
+.form_long{
+    width: 200px;
+    padding: 8px;
+}
