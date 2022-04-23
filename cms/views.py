@@ -1,3 +1,4 @@
+from re import A
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views.generic.list import ListView
@@ -24,12 +25,17 @@ def book_list(request):
     books = Book.objects.all().order_by('book_num')
     if "action" in request.GET:
         action = request.GET.get("action")
-        if action == "book_num":
+        if "book_num_asc" in action:
             books = books.order_by("book_num")
-        elif action == "book_name":
+        elif "book_name" in action:
             books = books.order_by("name")
-        elif action == "available":
+        elif "publisher" in action:
+            books = books.order_by("publisher")
+        elif "available" in action:
             books = books.order_by("isavailable")
+
+        if "des" in action:
+            books = books.reverse()
 
     return render(request,'cms/book_list.html',{'books': books})
 
