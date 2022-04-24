@@ -53,8 +53,10 @@ def book_rent(request, book_id):
         book = Book()
 
     if request.method == 'POST':
+        user = str(request.user)
         form = BookRentForm(request.POST, instance=book)
         if form.is_valid():
+            book.renter = user
             book = form.save(commit=False)
             book.isavailable = False
             book.save()
