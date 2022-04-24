@@ -71,7 +71,11 @@
             {%if book.isavailable%}
               <a href="{% url 'cms:book_rent' book_id=book.id %}" class="btn btn-outline-primary btn-sm">かりる</a>
             {% else %}
-              <a href="{% url 'cms:book_return' book_id=book.id %}" class="btn btn-outline-primary btn-sm">かえす</a>
+              {% if book.renter%}
+              {% if book.renter == user.get_username %}
+                <a href="{% url 'cms:book_return' book_id=book.id %}" class="btn btn-outline-primary btn-sm">かえす</a>
+              {% endif %}
+              {% endif %}
             {% endif %}
 
           </td>
