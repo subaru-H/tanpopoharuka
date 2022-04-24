@@ -5,6 +5,7 @@ from django.views.generic.list import ListView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import(LoginView, LogoutView)
+from django.core.paginator import Paginator
 from django.views import generic
 #from cms.models import Book
 #from cms.forms import BookEditForm, BookRentForm
@@ -36,6 +37,12 @@ def book_list(request):
 
         if "des" in action:
             books = books.reverse()
+    
+    paginator = Paginator(books, 10)
+    if "page" in request.GET:
+        books = paginator.get_page(request.GET["page"])
+    else:
+        books = paginator.get_page(1)
 
     return render(request,'cms/book_list.html',{'books': books})
 
