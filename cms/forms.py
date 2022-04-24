@@ -11,8 +11,8 @@ class BookEditForm(ModelForm):
 class BookRentForm(ModelForm):
     class Meta:
         model = Book
-        fields = ('renter', )
-        labels = {'renter': 'なまえ'}
+        fields = ()
+ #       labels = {'renter': 'なまえ'}
 
 class LoginForm(AuthenticationForm):
     #ログインフォーム，元のAuthenticationFormクラスではusernameとパスワードがセットで格納されている
