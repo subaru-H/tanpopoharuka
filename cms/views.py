@@ -22,7 +22,6 @@ class IndexView(generic.TemplateView):
     template_name = "cms/index.html"
 
 def book_list(request):
-    #return HttpResponse('書籍の一覧')
     books = Book.objects.all().order_by('book_num')
     if "action" in request.GET:
         action = request.GET.get("action")
